@@ -52,7 +52,6 @@ model User {
   profile       Profile?
   providerInfo  ServiceProvider?
   customerBookings Booking[] @relation("CustomerBookings")
-  providerBookings Booking[] @relation("ProviderBookings")
   reviewsGiven  Review[] @relation("Reviewer")
   reviewsReceived Review[] @relation("Reviewee")
   cancelledBookings Booking[] @relation("CancelledBy")
@@ -188,7 +187,6 @@ model Review {
   @@map("reviews")
   @@index([revieweeId])
   @@index([bookingId])
-  @@check([rating >= 1, rating <= 5])
 }
 
 model AvailabilitySlot {
@@ -204,7 +202,6 @@ model AvailabilitySlot {
 
   @@map("availability_slots")
   @@index([providerId, dayOfWeek])
-  @@check([dayOfWeek >= 0, dayOfWeek <= 6])
 }
 
 model BlockedDate {

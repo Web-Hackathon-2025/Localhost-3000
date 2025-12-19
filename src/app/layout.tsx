@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="en" className={`${inter.variable} ${poppins.variable} dark`}>
+      <body className="font-sans antialiased bg-gray-950 text-gray-50">
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

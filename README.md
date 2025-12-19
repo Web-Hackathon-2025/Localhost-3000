@@ -4,56 +4,48 @@ A service marketplace platform connecting customers with local service providers
 
 ## 🚀 Getting Started
 
+### Quick Start (5 Minutes)
+
+For a quick setup, see [QUICK_START.md](./QUICK_START.md)
+
+### Detailed Setup Guide
+
+For comprehensive setup instructions, see [SETUP_GUIDE.md](./SETUP_GUIDE.md)
+
 ### Prerequisites
 
-- Node.js 18+ 
-- PostgreSQL database (or Supabase account)
-- npm or yarn
+- **Node.js 18+** - [Download](https://nodejs.org/)
+- **PostgreSQL 14+** - [Download](https://www.postgresql.org/download/) or use [Supabase](https://supabase.com)
+- **npm** (comes with Node.js)
 
-### Installation
+### Quick Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd karigar-mvp
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Edit `.env.local` and add your database URL and JWT secret:
+2. **Create `.env` file**
    ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/karigar"
+   DATABASE_URL="postgresql://user:password@localhost:5432/karigar?schema=public"
    JWT_SECRET="your-super-secret-jwt-key"
-   NEXTAUTH_SECRET="your-nextauth-secret"
+   NODE_ENV="development"
    NEXTAUTH_URL="http://localhost:3000"
    ```
 
-4. **Set up the database**
+3. **Set up database**
    ```bash
-   # Generate Prisma Client
-   npm run db:generate
-   
-   # Push schema to database
-   npm run db:push
-   
-   # Or create a migration
-   npm run db:migrate
+   npm run db:generate  # Generate Prisma Client
+   npm run db:push      # Push schema to database
+   npm run db:seed      # Seed with categories
    ```
 
-5. **Start the development server**
+4. **Start development server**
    ```bash
    npm run dev
    ```
 
-6. **Open your browser**
+5. **Open browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📁 Project Structure
@@ -132,17 +124,23 @@ Available components:
 This project follows the roadmap outlined in `KARIGAR_MVP_ROADMAP.md`:
 
 - ✅ **Phase 0**: Foundation & Setup (Complete)
-- ⏳ **Phase 1**: Core User Management & Profiles
-- ⏳ **Phase 2**: Service Discovery & Provider Profiles
-- ⏳ **Phase 3**: Booking System & Workflow
-- ⏳ **Phase 4**: Reviews, Ratings & Admin Tools
+- ✅ **Phase 1**: Core User Management & Profiles (Complete)
+- ✅ **Phase 2**: Service Discovery & Provider Profiles (Complete)
+- ✅ **Phase 3**: Booking System & Workflow (Complete)
+- ✅ **Phase 4**: Reviews, Ratings & Admin Tools (Complete)
+
+**🎉 MVP Status: COMPLETE & READY FOR LAUNCH!**
 
 ## 📚 Documentation
 
+- **[Quick Start Guide](./QUICK_START.md)** - Get running in 5 minutes
+- **[Complete Setup Guide](./SETUP_GUIDE.md)** - Detailed setup instructions
 - [Development Roadmap](./KARIGAR_MVP_ROADMAP.md)
-- [Technical Architecture](./TECHNICAL_ARCHITECTURE.md)
-- [Task Breakdown](./TASK_BREAKDOWN.md)
-- [Quick Start Guide](./QUICK_START_GUIDE.md)
+- [Phase 0 Complete](./PHASE_0_COMPLETE.md)
+- [Phase 1 Complete](./PHASE_1_COMPLETE.md)
+- [Phase 2 Complete](./PHASE_2_COMPLETE.md)
+- [Phase 3 Complete](./PHASE_3_COMPLETE.md)
+- [Phase 4 Complete](./PHASE_4_COMPLETE.md)
 
 ## 🤝 Contributing
 

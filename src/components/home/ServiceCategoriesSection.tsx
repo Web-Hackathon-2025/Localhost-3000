@@ -40,10 +40,10 @@ export function ServiceCategoriesSection() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {Array.from({ length: 12 }).map((_, i) => (
-              <Card key={i} className="animate-pulse">
+              <Card key={i} className="animate-pulse bg-gray-900/50 border-gray-800">
                 <CardContent className="p-6">
-                  <div className="h-12 w-12 bg-gray-200 rounded-full mx-auto mb-2" />
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto" />
+                  <div className="h-12 w-12 bg-gray-800 rounded-full mx-auto mb-2" />
+                  <div className="h-4 bg-gray-800 rounded w-3/4 mx-auto" />
                 </CardContent>
               </Card>
             ))}
@@ -54,31 +54,37 @@ export function ServiceCategoriesSection() {
   }
 
   return (
-    <section className="py-24 sm:py-32 bg-gray-50">
+    <section className="py-24 sm:py-32 relative">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center mb-12">
-          <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-            Browse by Category
+          <h2 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+            Browse by <span className="text-primary-400">Category</span>
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-400">
             Find the service you need from our wide range of categories
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {categories.map((category) => (
             <Link key={category.id} href={`/search?category=${category.id}`}>
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer text-center h-full">
+              <Card className="bg-gray-900/40 hover:bg-gray-900/50 transition-colors cursor-pointer text-center h-full group rounded-2xl">
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-3">{category.icon || '🔧'}</div>
-                  <h3 className="font-semibold text-sm">{category.name}</h3>
+                  <div className="text-4xl mb-4">
+                    {category.icon || '🔧'}
+                  </div>
+                  <h3 className="font-semibold text-sm text-gray-200 group-hover:text-primary-400 transition-colors">
+                    {category.name}
+                  </h3>
                 </CardContent>
               </Card>
             </Link>
           ))}
         </div>
-        <div className="text-center mt-8">
+        <div className="text-center mt-10">
           <Link href="/search">
-            <Button variant="outline">View All Categories</Button>
+            <Button variant="outline" className="text-gray-300 hover:bg-gray-800/30 rounded-xl">
+              View All Categories
+            </Button>
           </Link>
         </div>
       </div>

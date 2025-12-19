@@ -40,11 +40,18 @@ export async function GET(request: NextRequest) {
         where,
         include: {
           profile: true,
-          providerInfo: true,
+          providerInfo: {
+            include: {
+              _count: {
+                select: {
+                  bookings: true,
+                },
+              },
+            },
+          },
           _count: {
             select: {
               customerBookings: true,
-              providerBookings: true,
             },
           },
         },
@@ -72,12 +79,16 @@ export async function GET(request: NextRequest) {
               averageRating: true,
               totalReviews: true,
               completedJobs: true,
+              _count: {
+                select: {
+                  bookings: true,
+                },
+              },
             },
           },
           _count: {
             select: {
               customerBookings: true,
-              providerBookings: true,
             },
           },
         },

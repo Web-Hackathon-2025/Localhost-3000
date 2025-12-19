@@ -22,11 +22,18 @@ export async function GET(
       where: { id: params.id },
       include: {
         profile: true,
-        providerInfo: true,
+        providerInfo: {
+          include: {
+            _count: {
+              select: {
+                bookings: true,
+              },
+            },
+          },
+        },
         _count: {
           select: {
             customerBookings: true,
-            providerBookings: true,
             reviewsGiven: true,
             reviewsReceived: true,
           },

@@ -37,7 +37,6 @@ interface UserDetail {
   } | null
   _count?: {
     customerBookings: number
-    providerBookings: number
     reviewsGiven: number
     reviewsReceived: number
   }
@@ -280,7 +279,7 @@ export default function UserDetailPage() {
                   {user.role === 'provider' && (
                     <div>
                       <p className="text-sm text-gray-600">Bookings Received</p>
-                      <p className="text-2xl font-bold">{user._count.providerBookings}</p>
+                      <p className="text-2xl font-bold">{user.providerInfo?._count?.bookings || 0}</p>
                     </div>
                   )}
                   <div>
