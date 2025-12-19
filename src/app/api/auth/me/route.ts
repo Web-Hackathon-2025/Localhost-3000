@@ -17,6 +17,10 @@ export async function GET(request: NextRequest) {
 
     const user = await prisma.user.findUnique({
       where: { id: payload.userId },
+      include: {
+        profile: true,
+        providerInfo: true,
+      },
       select: {
         id: true,
         email: true,
@@ -25,6 +29,17 @@ export async function GET(request: NextRequest) {
         phone: true,
         emailVerified: true,
         createdAt: true,
+        profile: true,
+        providerInfo: {
+          select: {
+            verificationStatus: true,
+            isActive: true,
+            serviceRadiusKm: true,
+            averageRating: true,
+            totalReviews: true,
+            completedJobs: true,
+          },
+        },
       },
     })
 
@@ -41,4 +56,3 @@ export async function GET(request: NextRequest) {
     )
   }
 }
-

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card'
+import { ServiceCategoriesSection } from '@/components/home/ServiceCategoriesSection'
 
 export default function HomePage() {
   return (
@@ -27,6 +28,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Service Categories */}
+      <ServiceCategoriesSection />
 
       {/* Features Section */}
       <section className="py-24 sm:py-32">
