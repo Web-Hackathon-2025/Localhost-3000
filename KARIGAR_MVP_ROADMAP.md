@@ -12,7 +12,7 @@ This roadmap breaks down the Karigar MVP into 4 development phases, each buildin
 ## 🎯 Phase 0: Foundation & Setup (Days 1-3)
 
 ### Objectives
-- Set up development environment and project structure
+- Set up development environment and project structur
 - Configure core infrastructure and tooling
 - Establish database schema foundation
 - Create basic UI framework
